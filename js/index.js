@@ -1,20 +1,31 @@
-const unReadMessages = document.querySelector('.unread');
-const unReadMessagesCount = document.getElementById('#No-notif');
-const markAll = document.getElementById('#Mark');
-
-unReadMessagesCount.innerText = unReadMessages.length;
-
-unReadMessages.forEach((message) =>{
-        message.addEventListener('click', () => {
-                message.querySelector('unread').style.backgroundColor = "white";
-               
-        })
-})
-//Mark all as read part
-markAll.addEventListener('click', () =>{
-        unReadMessages.forEach((message) => {
-                message.classList.remove('unread');
+//Notification change
+document.addEventListener("DOMContentLoaded", function () {
+        const notifCards = document.querySelectorAll(".notif-card");
+        const markAllReadBtn = document.getElementById("Mark");
+        const notificationCount = document.getElementById("No-notif");
+      
+        const unreadCards = Array.from(notifCards).filter(
+          (card) => card.id === "unread"
+        );
+      
+        unreadCards.forEach((card) => {
+          card.addEventListener("click", () => {
+            if (card.id === "unread") {
+              if (parseInt(notificationCount.textContent) <= 0) {
+                notificationCount.textContent = parseInt(
+                  notificationCount.textContent
+                );
+              } else {
+                notificationCount.textContent =
+                  parseInt(notificationCount.textContent) - 1;
+              }
+              card.id = "";
+            }
+          });
         });
-        const unReadMessages = document.querySelectorAll('.unread');
-        unReadMessagesCount.innerHTML = newUnreadMessages.length
-})
+      
+        console.log(parseInt(notificationCount.textContent) - 1);
+        markAllReadBtn.addEventListener("click", function () {
+                notificationCount.textContent = "0";
+              });
+            });
