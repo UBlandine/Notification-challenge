@@ -1,19 +1,19 @@
 *{
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family:  sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box ;
 }
 body{
-  min-height: 100vh;
-  background-color: hsl(210, 60%, 98%);
+  height: 100vh;
+  background-color: antiquewhite;
   font-size: 16px;
   color: hsl(219, 12%, 42%);
 }
 .container{
   margin: 80px auto;
   width: 600px;
-  height: 800px;
+  height: 850px;
   padding: 1rem 1rem 0;
   border-radius: 0.5rem;
   background-color: #fff;   
@@ -23,17 +23,61 @@ header{
   background-color: #fff;
   margin: 10px;
   border-radius: 15px;
+  justify-content: space-between;
   display: flex;
 }
 .no-box{
   display: flex;
   align-items: center;
 }
-.title{
-  color: hsl(221, 21%, 14%);
-  padding-left: 0.1rem;
-  font-size: 20px;
-  font-weight: 800;
+#No-notif{
+background-color: blue;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+width: 30px;
+height: 30px;
+border-radius: 0.5rem;
+margin-left: 10px;
+}
+#Mark{
+  color: gray;
+  cursor: pointer;
+  transition: 0,6s ease;
+}
+#Mark:hover{
+  color: black;
+}
+main{
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.notif-card{
+display: flex;
+align-items: center;
+padding: 1rem;
+gap: 1rem;
+border-radius: 1rem;
+}
+.notif-card img{
+width: 50px;
+height: 50px;
+border-radius: 3rem;
+}
+.notif-card .description{
+  margin-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#unread{
+  background-color: rgb(191, 191, 253);
+  width: 555px;
+  height: 60px;
 }
 .pan{
   color: #fff;
@@ -44,70 +88,11 @@ header{
   padding: 3px 6px ;
   margin-left: 6px;
 }
-#Notifications{
-  background-color: aliceblue;
- padding-left: .1rem;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 30x;
-  font-weight: 600;
-  border-radius: .5rem;
-}
-.no-box img{
-  width: 30px;
-  height: 30px;
-  margin-left: .1rem;
-  color: blue;
-}
-#Mark{
-  cursor: pointer;
-  padding-left: 17rem;
-  font-size: 14px;
-}
-#Mark:hover{
-  color: rgb(84, 84, 167);
-}
-main{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.notif-card{
-  display: flex;
-  align-items: center;
-  border-radius: .5rem;
-  padding: .5rem;
-  box-shadow: 0px 0px 26px -13px rgb(0, 0,26, 0);
-}
-.unread{
-  background-color: rgb(218, 228, 232);
-  border-radius: 10px;
-  display: flex;
-  width: 750px;
-  height: 80px;
-  padding-left: .5rem;
-  font-size: 16px;
-  box-shadow: 0px 0px 26px -13px rgb(0, 0,26, 0);
-  align-items: center;
-}
-.notif-card img{
-  width: 50px;
-  height: 50px;
-  border-radius: 3rem;
-}
 .c-img{
-  padding-left: 6rem;
-}
-.description{
-  padding-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding-left: 3rem;
 }
 strong{
-  color: darkblue;
+  color: black;
 }
 strong:hover{
   color: blueviolet;
@@ -123,13 +108,11 @@ strong:hover{
  margin-left: .1rem;
  margin-top: .4rem;
  justify-content: center;
-  
 }
 .user-act p{
   color: #fbf7f7;
   margin-top: 1rem;
 }
-
 .name{
   color: darkblue;
 }
@@ -140,21 +123,31 @@ strong:hover{
   height: 80px;
   text-decoration: none;
   padding: 15px 20px 15px;
-  
  margin-left: 4.5rem;
- margin-top: .1rem;
+ gap: .1rem;
  background-color: rgb(247, 248, 249);
 }
 @media screen and (max-width:768px){
-  body{
-    font-size: 14px;
-    line-height: 1.4;
-  }
+
   .container{
     margin: 20px auto;
     padding: 25px 15px 0;
     display: block;
     width: 100%;
+    height: fit-content;
+    position: relative;
+  }
+  .notif-card{
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  #unread{
+    display: block;
+  width: 100%;
+  text-align: center;
+  position: relative;
+
   }
   header{
     display: block;
@@ -166,12 +159,14 @@ strong:hover{
     display: block;
     align-items: center;
   }
-  .msg{
-    box-sizing: border-box;
+  .msg p{
+    
     text-align: center;
     display: block;
     width: 100%;
-    position: relative;
+    height: fit-content;
+  border-radius: auto;
+  
 
   }
 }

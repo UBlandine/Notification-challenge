@@ -1,21 +1,20 @@
-const unReadMessages = document.querySelectorAll(".unread");
-const unread = document.getElementById("Notifications");
-const markAll = document.getElementById("Mark")
+const unReadMessages = document.querySelector('.unread');
+const unReadMessagesCount = document.getElementById('#No-notif');
+const markAll = document.getElementById('#Mark');
 
-unread.innertext = readUnreadMessages.length;
+unReadMessagesCount.innerText = unReadMessages.length;
 
 unReadMessages.forEach((message) =>{
-  message.addEventListener("click", {} => {
-    message.classList.remove (".unread");
-    const newUnreadMessages = document.querySelectorAll(".unread");
-    unread.innerText = newUnreadMessages.length;
-  })
+        message.addEventListener('click', () => {
+                message.querySelector('unread').style.backgroundColor = "white";
+               
+        })
 })
-
-  markAll.addEventListener("click", () =>{
-    unReadMessages.forEach((message) =>{
-      message.classList.remove("unread")
-    })
-    const newUnreadMessages = document.querySelectorAll(".unread");
-    unread.innerText = newUnreadMessages.length;
-  })
+//Mark all as read part
+markAll.addEventListener('click', () =>{
+        unReadMessages.forEach((message) => {
+                message.classList.remove('unread');
+        });
+        const unReadMessages = document.querySelectorAll('.unread');
+        unReadMessagesCount.innerHTML = newUnreadMessages.length
+})
