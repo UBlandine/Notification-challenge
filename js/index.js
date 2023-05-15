@@ -1,4 +1,3 @@
-//Notification change
 document.addEventListener("DOMContentLoaded", function () {
         const notifCards = document.querySelectorAll(".notif-card");
         const markAllReadBtn = document.getElementById("Mark");
@@ -24,8 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
           });
         });
       
-        console.log(parseInt(notificationCount.textContent) - 1);
         markAllReadBtn.addEventListener("click", function () {
-                notificationCount.textContent = "0";
-              });
-            });
+          unreadCards.forEach((card) => {
+            card.id = "";
+          });
+          notificationCount.textContent = "0";
+        });
+      })

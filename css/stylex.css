@@ -147,6 +147,7 @@ strong:hover{
   width: 100%;
   text-align: center;
   position: relative;
+  box-sizing: border-box;
 
   }
   header{
@@ -159,14 +160,15 @@ strong:hover{
     display: block;
     align-items: center;
   }
-  .msg p{
+  .msg {
     
     text-align: center;
     display: block;
-    width: 100%;
-    height: fit-content;
+    width: 210px;
+    height: 125px;
   border-radius: auto;
-  
+  box-sizing: border-box;
+  position: relative;
 
   }
 }
